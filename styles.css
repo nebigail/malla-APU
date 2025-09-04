@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f8f4fb;
+  font-family: 'Poppins', sans-serif;
+  background-color: #6a0dad; /* violeta fuerte */
   color: #4b3d5c;
   margin: 0;
   padding: 20px;
@@ -8,7 +10,9 @@ body {
 
 h1 {
   text-align: center;
-  color: #5d4f7c;
+  color: white;
+  font-weight: 600;
+  margin-bottom: 30px;
 }
 
 .grid {
@@ -31,6 +35,7 @@ h1 {
 
 .semester h3 {
   color: #5d4f7c;
+  text-align: center;
 }
 
 .course {
@@ -38,7 +43,7 @@ h1 {
   width: 100%;
   margin: 6px 0;
   padding: 10px;
-  background: #cbb8e9;
+  background: #d8b9f2; /* lila pastel */
   border: none;
   border-radius: 8px;
   color: #4b3d5c;
@@ -48,12 +53,12 @@ h1 {
 }
 
 .course:hover:not(:disabled) {
-  background: #b9a4e3;
+  background: #caa3ec;
   transform: scale(1.03);
 }
 
 .course:disabled {
-  background: #d8cde9;
+  background: #e6d6f4;
   color: #999;
   cursor: not-allowed;
   opacity: 0.7;
@@ -67,11 +72,10 @@ h1 {
 /* animación al desbloquear */
 @keyframes unlock {
   0% { box-shadow: 0 0 0 rgba(0,0,0,0); }
-  50% { box-shadow: 0 0 15px #b9a4e3; }
+  50% { box-shadow: 0 0 15px #caa3ec; }
   100% { box-shadow: 0 0 0 rgba(0,0,0,0); }
 }
 
 .course.unlocked {
   animation: unlock 0.5s ease-out;
 }
-
