@@ -13,20 +13,22 @@ h1 {
 
 .grid {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap; /* para que no se envuelvan */
   justify-content: center;
-  gap: 20px;
+  gap: 10px; /* margen pequeño entre años */
+  overflow-x: auto; /* para scroll horizontal si no caben */
+  padding-bottom: 10px; /* espacio para scroll */
 }
-
 .year {
   background: #ede3f7;
   padding: 15px;
   border-radius: 10px;
-  min-width: 300px;
+  width: 320px; /* ancho fijo para que queden iguales */
   display: flex;
   flex-direction: row;
-  gap: 1px; /* espacio entre cuatrimestres */
+  gap: 10px; /* espacio entre cuatrimestres */
   align-items: flex-start;
+  flex-shrink: 0; /* que no se reduzcan */
 }
 
 /* que cada cuatrimestre ocupe su cajita */
