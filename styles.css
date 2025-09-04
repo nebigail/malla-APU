@@ -32,7 +32,7 @@ h1 {
 /* que cada cuatrimestre ocupe su cajita */
 .semester {
   flex: 1;
-  margin-top: 10px;
+  margin-top: 15px;
 }
 .semester h3 {
   color: #5d4f7c;
