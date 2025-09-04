@@ -1,70 +1,114 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f8f4fb; /* fondo lilas pastel */
-  color: #4b3d5c;
-  margin: 0;
-  padding: 20px;
+:root{
+  --lila-100:#f8f4fb;
+  --lila-200:#ede3f7;
+  --lila-300:#d8cde9;
+  --lila-400:#cbb8e9;
+  --lila-500:#b9a4e3;
+  --lila-700:#a182d6;
+  --texto:#4b3d5c;
+  --titulo:#5d4f7c;
 }
 
-h1 {
-  text-align: center;
-  color: #5d4f7c;
+*{box-sizing:border-box}
+
+body{
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--lila-100);
+  color: var(--texto);
+  margin:0;
+  padding:24px;
 }
 
-.grid {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  flex-wrap: wrap;
+h1{
+  text-align:center;
+  color:var(--titulo);
+  margin:0 0 20px;
 }
 
-.year {
-  margin: 10px;
-  padding: 10px;
-  background-color: #ede3f7;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  width: 300px;
+.grid{
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
+  justify-content:center;
 }
 
-.semester {
-  margin-top: 15px;
+.year{
+  background:var(--lila-200);
+  border-radius:16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,.06);
+  padding:16px;
+  min-width: 620px; /* para mostrar dos cuatrimestres en fila */
 }
 
-.semester h3 {
-  margin-bottom: 10px;
-  color: #5d4f7c;
+.year h2{
+  margin:4px 8px 12px;
+  color:var(--titulo);
 }
 
-.course {
-  display: block;
-  width: 100%;
-  margin: 5px 0;
-  padding: 10px;
-  background-color: #cbb8e9;
-  border: none;
-  border-radius: 8px;
-  color: #4b3d5c;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
+.semesters{
+  display:flex;              /* cuatrimestres en horizontal */
+  gap:16px;
+  align-items:flex-start;
 }
 
-.course:hover:not(.locked) {
-  background-color: #b9a4e3;
-  transform: scale(1.02);
+.semester{
+  background:white;
+  background: #f6f1fb;
+  border:1px solid var(--lila-300);
+  border-radius:12px;
+  padding:12px;
+  width: 300px;              /* ramos en vertical dentro */
 }
 
-.course.locked {
-  background-color: #d8cde9;
-  color: #999;
-  cursor: not-allowed;
-  opacity: 0.6;
+.semester h3{
+  margin:0 0 10px;
+  color:var(--titulo);
+  font-size:1rem;
 }
 
-.course.approved {
-  background-color: #a182d6;
-  color: white;
+.course{
+  display:block;
+  width:100%;
+  padding:12px 10px;
+  margin:8px 0;
+  border-radius:10px;
+  border:1px solid transparent;
+  background:var(--lila-400);
+  color:var(--texto);
+  font-weight:600;
+  cursor:pointer;
+  transition:transform .15s, box-shadow .15s, background .2s, border-color .2s;
 }
 
+.course:hover:not([disabled]){
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(0,0,0,.08);
+  background:var(--lila-500);
+}
 
+.course[disabled]{
+  background:var(--lila-300);
+  color:#8b829a;
+  cursor:not-allowed;
+  opacity:.75;
+  border-color: rgba(0,0,0,.05);
+}
+
+.course.approved{
+  background:var(--lila-700);
+  color:white;
+  border-color: #7f64c6;
+}
+
+/* mini leyenda opcional */
+.legend{
+  display:flex;
+  gap:8px;
+  align-items:center;
+  font-size:.9rem;
+  color:#6b5a86;
+}
+.legend .swatch{width:14px;height:14px;border-radius:4px;border:1px solid rgba(0,0,0,.08)}
+.legend .s1{background:var(--lila-400)}
+.legend .s2{background:var(--lila-300)}
+.legend .s3{background:var(--lila-700)}
