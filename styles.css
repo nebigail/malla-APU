@@ -31,7 +31,7 @@ h1 {
 
 /* que cada cuatrimestre ocupe su cajita */
 .semester {
-  flex: 1;
+  flex: 0;
   margin-top: 15px;
 }
 .semester h3 {
