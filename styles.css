@@ -1,45 +1,43 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f8f4fb;
-  color: #4b3d5c;
-  margin: 0;
-  padding: 20px;
-}
-
-h1 {
-  text-align: center;
-  color: #5d4f7c;
-}
-
 .grid {
   display: flex;
-  flex-wrap: nowrap; /* para que no se envuelvan */
+  flex-wrap: nowrap; /* años en fila */
   justify-content: center;
-  gap: 10px; /* margen pequeño entre años */
-  overflow-x: auto; /* para scroll horizontal si no caben */
-  padding-bottom: 10px; /* espacio para scroll */
+  gap: 15px; /* espacio pequeño entre años */
+  overflow-x: auto; /* scroll horizontal si no caben */
+  padding-bottom: 10px;
 }
+
 .year {
   background: #ede3f7;
   padding: 15px;
   border-radius: 10px;
-  width: 320px; /* ancho fijo para que queden iguales */
+  width: 280px; /* ancho fijo para cada año */
   display: flex;
-  flex-direction: row;
-  gap: 10px; /* espacio entre cuatrimestres */
-  align-items: flex-start;
-  flex-shrink: 0; /* que no se reduzcan */
+  flex-direction: column; /* contenido vertical dentro del año */
+  gap: 20px; /* espacio entre título y cuatrimestres */
+  flex-shrink: 0; /* que no se reduzca */
+  box-sizing: border-box;
 }
 
-/* que cada cuatrimestre ocupe su cajita */
-.semester {
-  flex: 1;
-  margin-top: 15px;
+.year h2 {
+  margin: 0 0 10px 0;
+  color: #5d4f7c;
+  text-align: center;
 }
+
+/* Cuatrimestres dentro del año en columna vertical */
+.semester {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .semester h3 {
   color: #5d4f7c;
+  margin: 0 0 6px 0;
 }
 
+/* Cursos ya definidos */
 .course {
   display: block;
   width: 100%;
@@ -81,3 +79,14 @@ h1 {
 .course.unlocked {
   animation: unlock 0.5s ease-out;
 }
+
+/* Responsive: en pantallas pequeñas, años en columna */
+@media (max-width: 800px) {
+  .grid {
+    flex-wrap: wrap;
+  }
+  .year {
+    width: 100%;
+  }
+}
+
