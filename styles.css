@@ -1,116 +1,76 @@
-:root{
-  --lila-100:#f8f4fb;
-  --lila-200:#ede3f7;
-  --lila-300:#d8cde9;
-  --lila-400:#cbb8e9;
-  --lila-500:#b9a4e3;
-  --lila-700:#a182d6;
-  --texto:#4b3d5c;
-  --titulo:#5d4f7c;
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f4fb;
+  color: #4b3d5c;
+  margin: 0;
+  padding: 20px;
 }
 
-*{box-sizing:border-box}
-
-body{
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-  background: var(--lila-100);
-  color: var(--texto);
-  margin:0;
-  padding:24px;
+h1 {
+  text-align: center;
+  color: #5d4f7c;
 }
 
-h1{
-  text-align:center;
-  color:var(--titulo);
-  margin:0 0 20px;
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
 
-.grid{
-  display:flex;
-  gap:16px;
-  flex-wrap:wrap;
-  justify-content:center;
+.year {
+  background: #ede3f7;
+  padding: 15px;
+  border-radius: 10px;
+  min-width: 300px;
 }
 
-/* cada "year" contiene dos cuatrimestres en fila */
-.year{
-  background:var(--lila-200);
-  border-radius:12px;
-  box-shadow: 0 8px 18px rgba(0,0,0,.06);
-  padding:14px;
-  min-width: 640px;
+.semester {
+  margin-top: 15px;
 }
 
-.year h2{
-  margin:6px 8px 12px;
-  color:var(--titulo);
-  font-size:1.1rem;
+.semester h3 {
+  color: #5d4f7c;
 }
 
-.semesters{
-  display:flex;              /* cuatrimestres en horizontal */
-  gap:14px;
-  align-items:flex-start;
+.course {
+  display: block;
+  width: 100%;
+  margin: 6px 0;
+  padding: 10px;
+  background: #cbb8e9;
+  border: none;
+  border-radius: 8px;
+  color: #4b3d5c;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
-.semester{
-  background: #f6f1fb;
-  border:1px solid var(--lila-300);
-  border-radius:10px;
-  padding:12px;
-  width: 300px;              /* ramos en vertical dentro */
+.course:hover:not(:disabled) {
+  background: #b9a4e3;
+  transform: scale(1.03);
 }
 
-.semester h3{
-  margin:0 0 10px;
-  color:var(--titulo);
-  font-size:1rem;
+.course:disabled {
+  background: #d8cde9;
+  color: #999;
+  cursor: not-allowed;
+  opacity: 0.7;
 }
 
-/* boton materia */
-.course{
-  display:block;
-  width:100%;
-  padding:12px 10px;
-  margin:8px 0;
-  border-radius:10px;
-  border:1px solid transparent;
-  background:var(--lila-400);
-  color:var(--texto);
-  font-weight:600;
-  cursor:pointer;
-  transition:transform .12s, box-shadow .12s, background .18s, border-color .18s;
-}
-
-.course:hover:not([disabled]){
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0,0,0,.08);
-  background:var(--lila-500);
-}
-
-/* estilo de bloqueado (gris) */
-.course[disabled]{
-  background:var(--lila-300);
-  color:#8b829a;
-  cursor:not-allowed;
-  opacity:.9;
-  border-color: rgba(0,0,0,.03);
-}
-
-/* aprobado */
-.course.approved{
-  background:var(--lila-700);
-  color:white;
-  border-color:#7f64c6;
+.course.approved {
+  background: #a182d6;
+  color: white;
 }
 
 /* animación al desbloquear */
 @keyframes unlock {
-  0%   { box-shadow: 0 0 0 rgba(0,0,0,0); transform:translateY(0) scale(.997); }
-  50%  { box-shadow: 0 0 18px rgba(161,125,212,.25); transform:translateY(-3px) scale(1.02); }
-  100% { box-shadow: 0 0 0 rgba(0,0,0,0); transform:translateY(0) scale(1); }
+  0% { box-shadow: 0 0 0 rgba(0,0,0,0); }
+  50% { box-shadow: 0 0 15px #b9a4e3; }
+  100% { box-shadow: 0 0 0 rgba(0,0,0,0); }
 }
 
-.course.unlocked-animation{
-  animation: unlock 0.6s ease-out;
+.course.unlocked {
+  animation: unlock 0.5s ease-out;
 }
