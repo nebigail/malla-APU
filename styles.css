@@ -23,12 +23,17 @@ h1 {
   padding: 15px;
   border-radius: 10px;
   min-width: 300px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px; /* espacio entre cuatrimestres */
+  align-items: flex-start;
 }
 
+/* que cada cuatrimestre ocupe su cajita */
 .semester {
+  flex: 1;
   margin-top: 15px;
 }
-
 .semester h3 {
   color: #5d4f7c;
 }
