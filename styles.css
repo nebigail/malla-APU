@@ -2,15 +2,15 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #af65b9; 
-  color: #af65b9;
+  background-color: #af65b9; /* violeta de fondo */
+  color: #4b3d5c;
   margin: 0;
   padding: 20px;
 }
 
 h1 {
   text-align: center;
-  color: white;
+  color: #b387d6; /* color título */
   font-weight: 600;
   margin-bottom: 30px;
 }
@@ -34,7 +34,7 @@ h1 {
 }
 
 .semester h3 {
-  color: #5d4f7c;
+  color: #b387d6; /* subtítulos */
   text-align: center;
 }
 
@@ -43,36 +43,36 @@ h1 {
   width: 100%;
   margin: 6px 0;
   padding: 10px;
-  background: #d8b9f2; /* lila pastel */
+  background: #9baef3; /* casillas de materias */
   border: none;
   border-radius: 8px;
-  color: #4b3d5c;
+  color: #fff; /* contraste con el fondo */
   font-weight: bold;
   cursor: pointer;
   transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
 .course:hover:not(:disabled) {
-  background: #caa3ec;
+  background: #8698e0;
   transform: scale(1.03);
 }
 
 .course:disabled {
-  background: #e6d6f4;
-  color: #999;
+  background: #c0ccf6;
+  color: #777;
   cursor: not-allowed;
   opacity: 0.7;
 }
 
 .course.approved {
-  background: #a182d6;
+  background: #6c83d3;
   color: white;
 }
 
 /* animación al desbloquear */
 @keyframes unlock {
   0% { box-shadow: 0 0 0 rgba(0,0,0,0); }
-  50% { box-shadow: 0 0 15px #caa3ec; }
+  50% { box-shadow: 0 0 15px #8698e0; }
   100% { box-shadow: 0 0 0 rgba(0,0,0,0); }
 }
 
