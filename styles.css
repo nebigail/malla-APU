@@ -25,7 +25,7 @@ h1 {
   min-width: 300px;
   display: flex;
   flex-direction: row;
-  gap: 20px; /* espacio entre cuatrimestres */
+  gap: 10px; /* espacio entre cuatrimestres */
   align-items: flex-start;
 }
 
