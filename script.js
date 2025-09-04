@@ -3,30 +3,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
   courses.forEach(course => {
     course.addEventListener("click", () => {
+      // no hacer nada si está bloqueado
       if (course.classList.contains("locked")) return;
 
-      // Marcar aprobado
+      // marcar/desmarcar aprobado
       course.classList.toggle("approved");
 
-      // Desbloquear ramos dependientes si aprobado
+      // si desbloquea otro
+      const unlockId = course.dataset.unlocks;
+      if (!unlockId) return;
+
+      const next = document.getElementById(unlockId);
+      if (!next) return;
+
+      // si recién se aprobó, desbloquear el siguiente
       if (course.classList.contains("approved")) {
-        const unlockId = course.dataset.unlocks;
-        if (unlockId) {
-          const next = document.getElementById(unlockId);
-          if (next) {
-            next.classList.remove("locked");
-          }
-        }
+        next.classList.remove("locked");
       } else {
-        // Si se desmarca, volver a bloquear
-        const unlockId = course.dataset.unlocks;
-        if (unlockId) {
-          const next = document.getElementById(unlockId);
-          if (next) {
-            next.classList.add("locked");
-            next.classList.remove("approved");
-          }
-        }
+        // si se desmarca, volver a bloquear y quitar aprobado al siguiente
+        next.classList.add("locked");
+        next.classList.remove("approved");
       }
     });
   });
