@@ -1,85 +1,94 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Malla Interactiva - Analista Programador Universitario</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <h1>Analista Programador Universitario</h1>
+
   <div class="grid">
 
     <!-- PRIMER AÑO -->
-    <div class="year">
+    <section class="year">
       <h2>Primer Año</h2>
+      <div class="semesters">
 
-      <div class="semester">
-        <h3>Primer Cuatrimestre</h3>
-        <button class="course" data-unlocks="ingles2">Inglés I</button>
-        <button class="course" data-unlocks="herramientas2">Herramientas Informáticas I</button>
-        <button class="course">Programación Estructurada</button>
-      </div>
+        <div class="semester">
+          <h3>Primer Cuatrimestre</h3>
+          <button id="ingles1" class="course" aria-pressed="false" data-unlocks="ingles2">Inglés I</button>
+          <button id="herramientas1" class="course" aria-pressed="false" data-unlocks="herramientas2">Herramientas Informáticas I</button>
+          <button id="prog_estructurada" class="course" aria-pressed="false">Programación Estructurada</button>
+        </div>
 
-      <div class="semester">
-        <h3>Segundo Cuatrimestre</h3>
-        <button class="course locked" id="ingles2" data-unlocks="ingles3">Inglés II</button>
-        <button class="course locked" id="herramientas2">Herramientas Informáticas II</button>
-        <button class="course">Estructura de Datos</button>
-        <button class="course" data-unlocks="labso2" id="labso1">Laboratorio de Sistemas Operativos I</button>
-        <button class="course" data-unlocks="bd2" id="bd1">Base de Datos I</button>
+        <div class="semester">
+          <h3>Segundo Cuatrimestre</h3>
+          <button id="ingles2" class="course" aria-pressed="false" data-prereq="ingles1" data-unlocks="ingles3" disabled>Inglés II</button>
+          <button id="herramientas2" class="course" aria-pressed="false" data-prereq="herramientas1" disabled>Herramientas Informáticas II</button>
+          <button id="edatos" class="course" aria-pressed="false">Estructura de Datos</button>
+          <button id="labso1" class="course" aria-pressed="false" data-unlocks="labso2">Laboratorio de Sistemas Operativos I</button>
+          <button id="bd1" class="course" aria-pressed="false" data-unlocks="bd2">Base de Datos I</button>
+        </div>
+
       </div>
-    </div>
+    </section>
 
     <!-- SEGUNDO AÑO -->
-    <div class="year">
+    <section class="year">
       <h2>Segundo Año</h2>
+      <div class="semesters">
 
-      <div class="semester">
-        <h3>Primer Cuatrimestre</h3>
-        <button class="course locked" id="ingles3" data-unlocks="ingles4">Inglés III</button>
-        <button class="course" data-unlocks="algebra2" id="algebra1">Álgebra I</button>
-        <button class="course">Programación Visual</button>
-        <button class="course locked" id="labso2">Laboratorio de Sistemas Operativos II</button>
-        <button class="course locked" id="bd2">Base de Datos II</button>
-      </div>
+        <div class="semester">
+          <h3>Primer Cuatrimestre</h3>
+          <button id="ingles3" class="course" aria-pressed="false" data-prereq="ingles2" data-unlocks="ingles4" disabled>Inglés III</button>
+          <button id="algebra1" class="course" aria-pressed="false" data-unlocks="algebra2">Álgebra I</button>
+          <button id="prog_visual" class="course" aria-pressed="false">Programación Visual</button>
+          <button id="labso2" class="course" aria-pressed="false" data-prereq="labso1" disabled>Laboratorio de Sistemas Operativos II</button>
+          <button id="bd2" class="course" aria-pressed="false" data-prereq="bd1" disabled>Base de Datos II</button>
+        </div>
 
-      <div class="semester">
-        <h3>Segundo Cuatrimestre</h3>
-        <button class="course locked" id="ingles4" data-unlocks="ingles5">Inglés IV</button>
-        <button class="course locked" id="algebra2">Álgebra II</button>
-        <button class="course">Programación Concurrente y Paralela</button>
-        <button class="course" data-unlocks="lpoo1" id="poo">Programación Orientada a Objetos</button>
-        <button class="course" data-unlocks="ads2" id="ads1">Análisis y Diseño de Sistemas I</button>
+        <div class="semester">
+          <h3>Segundo Cuatrimestre</h3>
+          <button id="ingles4" class="course" aria-pressed="false" data-prereq="ingles3" data-unlocks="ingles5" disabled>Inglés IV</button>
+          <button id="algebra2" class="course" aria-pressed="false" data-prereq="algebra1" disabled>Álgebra II</button>
+          <button id="prog_concurrente" class="course" aria-pressed="false">Programación Concurrente y Paralela</button>
+          <button id="poo" class="course" aria-pressed="false" data-unlocks="lpoo1">Programación Orientada a Objetos</button>
+          <button id="ads1" class="course" aria-pressed="false" data-unlocks="ads2">Análisis y Diseño de Sistemas I</button>
+        </div>
+
       </div>
-    </div>
+    </section>
 
     <!-- TERCER AÑO -->
-    <div class="year">
+    <section class="year">
       <h2>Tercer Año</h2>
+      <div class="semesters">
 
-      <div class="semester">
-        <h3>Primer Cuatrimestre</h3>
-        <button class="course locked" id="ingles5" data-unlocks="ingles6">Inglés V</button>
-        <button class="course" data-unlocks="redes2" id="redes1">Redes I</button>
-        <button class="course">Programación y Servicios Web</button>
-        <button class="course locked" id="lpoo1" data-unlocks="lpoo2">Laboratorio Programación OO I</button>
-        <button class="course locked" id="ads2">Análisis y Diseño de Sistemas II</button>
-      </div>
+        <div class="semester">
+          <h3>Primer Cuatrimestre</h3>
+          <button id="ingles5" class="course" aria-pressed="false" data-prereq="ingles4" data-unlocks="ingles6" disabled>Inglés V</button>
+          <button id="redes1" class="course" aria-pressed="false" data-unlocks="redes2">Redes I</button>
+          <button id="psw" class="course" aria-pressed="false">Programación y Servicios Web</button>
+          <button id="lpoo1" class="course" aria-pressed="false" data-prereq="poo" data-unlocks="lpoo2" disabled>Laboratorio Programación OO I</button>
+          <button id="ads2" class="course" aria-pressed="false" data-prereq="ads1" disabled>Análisis y Diseño de Sistemas II</button>
+        </div>
 
-      <div class="semester">
-        <h3>Segundo Cuatrimestre</h3>
-        <button class="course locked" id="ingles6">Inglés VI</button>
-        <button class="course locked" id="redes2">Redes II</button>
-        <button class="course locked" id="lpoo2">Laboratorio Programación OO II</button>
-        <button class="course">Herramientas Informáticas Avanzadas</button>
-        <button class="course">Legislación y Ejercicio Profesional</button>
+        <div class="semester">
+          <h3>Segundo Cuatrimestre</h3>
+          <button id="ingles6" class="course" aria-pressed="false" data-prereq="ingles5" disabled>Inglés VI</button>
+          <button id="redes2" class="course" aria-pressed="false" data-prereq="redes1" disabled>Redes II</button>
+          <button id="lpoo2" class="course" aria-pressed="false" data-prereq="lpoo1" disabled>Laboratorio Programación OO II</button>
+          <button id="hia" class="course" aria-pressed="false">Herramientas Informáticas Avanzadas</button>
+          <button id="legislacion" class="course" aria-pressed="false">Legislación y Ejercicio Profesional</button>
+        </div>
+
       </div>
-    </div>
+    </section>
 
   </div>
 
   <script src="script.js"></script>
 </body>
 </html>
-
