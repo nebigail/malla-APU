@@ -47,11 +47,12 @@ h1 {
   color: #4b3d5c;
   font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
 .course:hover:not(.locked) {
   background-color: #b9a4e3;
+  transform: scale(1.02);
 }
 
 .course.locked {
@@ -65,4 +66,5 @@ h1 {
   background-color: #a182d6;
   color: white;
 }
+
 
