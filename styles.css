@@ -7,13 +7,19 @@ body {
   color: #8C0832;
   margin: 0;
   padding: 20px;
+  background-image: url('fondo_malla.jpg'); 
+  background-size: cover;      
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 h1 {
   text-align: center;
-  color: #e898af; /* Título principal */
-  font-weight: 1000;
-  margin-bottom: 30px;
+  color: #eba0b6; /* Título principal */
+  font-weight: 900;
+  margin-bottom: 35px;
+  font-size: 50px;
+  margin-top: 30px;
 }
 
 .grid {
@@ -24,36 +30,39 @@ h1 {
 }
 
 .year {
-  background: #F66593; /* Fondo del box de cada año */
-  padding: 15px;
-  border-radius: 10px;
-  min-width: 100px;
+  background: #f15c8bc5; /* Fondo del box de cada año */
+  padding: 20px;
+  border-radius: 15px;
+  min-width: 28px;
 }
 
 .year h2 {
   text-align: center;
-  color: #430418; /* Títulos de años */
-  margin-bottom: 5px;
+  color: #8C0832; /* Títulos de años */
+  margin-bottom: 15px;
+  font-size: 28px;
+  font-weight: 900;
 }
 
 .semester {
-  margin-top: 15px;
+  margin-top: 5px;
 }
 
 .semester h3 {
-  color: #edafc4; /* Subtítulos de semestres */
+  color: #fdc8b5; /* Subtítulos de semestres */
   text-align: center;
+  font-size: 22px;
 }
 
 .course {
   display: block;
   width: 100%;
-  margin: 6px 0;
+  margin: 10px 0;
   padding: 10px;
-  background: #edafc4; /* Casillas de materias */
+  background: #8C0832; /* Casillas de materias */
   border: none;
   border-radius: 8px;
-  color: #935887; /* Contraste con fondo */
+  color:#fdc8b5; /* Contraste con fondo */
   font-weight: bold;
   cursor: pointer;
   transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
@@ -65,25 +74,24 @@ h1 {
 }
 
 .course:disabled {
-  background: #c0ccf6;
-  color: #777;
+  background: #ce97ea;
+  color: #353333;
   cursor: not-allowed;
   opacity: 0.7;
 }
 
 .course.approved {
-  background: #6c83d3;
+  background: #5AD36E;
   color: white;
 }
 
 /* animación al desbloquear */
 @keyframes unlock {
   0% { box-shadow: 0 0 0 rgba(0,0,0,0); }
-  50% { box-shadow: 0 0 15px #8698e0; }
+  50% { box-shadow: 0 0 15px #435cbf; }
   100% { box-shadow: 0 0 0 rgba(0,0,0,0); }
 }
 
 .course.unlocked {
   animation: unlock 0.5s ease-out;
 }
-
