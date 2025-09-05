@@ -12,7 +12,7 @@ body {
 h1 {
   text-align: center;
   color: #e898af; /* Título principal */
-  font-weight: 900;
+  font-weight: 1000;
   margin-bottom: 30px;
 }
 
@@ -32,7 +32,7 @@ h1 {
 
 .year h2 {
   text-align: center;
-  color: #F26994; /* Títulos de años */
+  color: #430418; /* Títulos de años */
   margin-bottom: 5px;
 }
 
