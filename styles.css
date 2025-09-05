@@ -1,6 +1,6 @@
-/* Importar fuente desde Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-
+*{
+    font-family: 'Questrial', sans-serif;
+}
 body {
   font-family: 'Poppins', sans-serif; /* Fuente global */
   background-color: #ef889a; /* Fondo general */
