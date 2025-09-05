@@ -11,7 +11,7 @@ body {
 
 h1 {
   text-align: center;
-  color: #fcd8df; /* Título principal */
+  color: #e898af; /* Título principal */
   font-weight: 800;
   margin-bottom: 30px;
 }
@@ -32,7 +32,7 @@ h1 {
 
 .year h2 {
   text-align: center;
-  color: #935887; /* Títulos de años */
+  color: #d47c9b; /* Títulos de años */
   margin-bottom: 10px;
 }
 
@@ -41,7 +41,7 @@ h1 {
 }
 
 .semester h3 {
-  color: #935887; /* Subtítulos de semestres */
+  color: #edafc4; /* Subtítulos de semestres */
   text-align: center;
 }
 
