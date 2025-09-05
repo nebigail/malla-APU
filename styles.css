@@ -27,7 +27,7 @@ h1 {
   background: #8a7fae; /* Fondo del box de cada año */
   padding: 15px;
   border-radius: 10px;
-  min-width: 300px;
+  min-width: 250px;
 }
 
 .year h2 {
