@@ -12,7 +12,7 @@ body {
 h1 {
   text-align: center;
   color: #fcd8df; /* Título principal */
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 30px;
 }
 
@@ -24,7 +24,7 @@ h1 {
 }
 
 .year {
-  background: #fcd8df; /* Fondo del box de cada año */
+  background: #8a7fae; /* Fondo del box de cada año */
   padding: 15px;
   border-radius: 10px;
   min-width: 300px;
@@ -41,7 +41,7 @@ h1 {
 }
 
 .semester h3 {
-  color: #b387d6; /* Subtítulos de semestres */
+  color: #ef889a; /* Subtítulos de semestres */
   text-align: center;
 }
 
@@ -50,10 +50,10 @@ h1 {
   width: 100%;
   margin: 6px 0;
   padding: 10px;
-  background: #9baef3; /* Casillas de materias */
+  background: #edafc4; /* Casillas de materias */
   border: none;
   border-radius: 8px;
-  color: #fff; /* Contraste con fondo */
+  color: #935887; /* Contraste con fondo */
   font-weight: bold;
   cursor: pointer;
   transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
