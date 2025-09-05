@@ -1,14 +1,9 @@
-
-.urbanist-<uniquifier> {
-  font-family: "Urbanist", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-}
+/* Importar fuente desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #af65b9; /* violeta de fondo */
+  font-family: 'Poppins', sans-serif; /* Fuente global */
+  background-color: #935887; /* Fondo general */
   color: #4b3d5c;
   margin: 0;
   padding: 20px;
@@ -16,7 +11,7 @@ body {
 
 h1 {
   text-align: center;
-  color: #b387d6; /* color título */
+  color: #8a7fae; /* Título principal */
   font-weight: 600;
   margin-bottom: 30px;
 }
@@ -29,10 +24,16 @@ h1 {
 }
 
 .year {
-  background: #ede3f7;
+  background: #fcd8df; /* Fondo del box de cada año */
   padding: 15px;
   border-radius: 10px;
   min-width: 300px;
+}
+
+.year h2 {
+  text-align: center;
+  color: #ef889a; /* Títulos de años */
+  margin-bottom: 10px;
 }
 
 .semester {
@@ -40,7 +41,7 @@ h1 {
 }
 
 .semester h3 {
-  color: #b387d6; /* subtítulos */
+  color: #b387d6; /* Subtítulos de semestres */
   text-align: center;
 }
 
@@ -49,10 +50,10 @@ h1 {
   width: 100%;
   margin: 6px 0;
   padding: 10px;
-  background: #9baef3; /* casillas de materias */
+  background: #9baef3; /* Casillas de materias */
   border: none;
   border-radius: 8px;
-  color: #fff; /* contraste con el fondo */
+  color: #fff; /* Contraste con fondo */
   font-weight: bold;
   cursor: pointer;
   transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
@@ -85,3 +86,4 @@ h1 {
 .course.unlocked {
   animation: unlock 0.5s ease-out;
 }
+
