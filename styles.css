@@ -60,7 +60,7 @@ h1 {
 }
 
 .course:hover:not(:disabled) {
-  background: #8698e0;
+  background: #8C0832;
   transform: scale(1.03);
 }
 
